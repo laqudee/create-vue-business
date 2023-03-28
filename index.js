@@ -150,7 +150,7 @@ async function init() {
           initial: false,
           active: 'Yes',
           inactive: 'No'
-        },
+        }
       ],
       {
         onCancel: () => {
@@ -170,7 +170,7 @@ async function init() {
     packageName = projectName ?? defaultProjectName,
     shouldOverwrite = argv.force,
     targetWeb = argv.web, // TODO
-    targetH5 = argv.h5, // TODO
+    targetH5 = argv.h5 // TODO
   } = result
 
   const root = path.join(cwd, targetDir)
@@ -200,13 +200,15 @@ async function init() {
   render('base')
 
   // target Web
-  if (targetWeb) { // TODO
+  if (targetWeb) {
+    // TODO
     render('code/web')
     render('config/web')
     render('entry/web')
   }
 
-  if (targetH5) { // TODO
+  if (targetH5) {
+    // TODO
     render('code/h5')
     render('config/h5')
     render('entry/h5')
@@ -235,13 +237,12 @@ async function init() {
   // Supported package managers: pnpm > yarn > npm
   const packageManager = 'pnpm'
 
-
   console.log(`\nDone. Now run:\n`)
-  console.log(`  ${bold(green(`Please use pnpm as the package management tool for the workspace project`))}`)
+  console.log(
+    `  ${bold(green(`Please use pnpm as the package management tool for the workspace project`))}`
+  )
   if (root !== cwd) {
-    console.log(
-      `  ${bold(green(`cd ../`))}`
-    )
+    console.log(`  ${bold(green(`cd ../`))}`)
   }
   console.log(`  ${bold(green(getCommand(packageManager, 'install')))}`)
   if (needsPrettier) {

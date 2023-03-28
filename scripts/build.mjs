@@ -54,7 +54,9 @@ await esbuild.build({
           file: 'LICENSE',
           template(allDependencies) {
             // There's a bug in the plugin that it also includes the `create-vue-business` package itself
-            const dependencies = allDependencies.filter((d) => d.packageJson.name !== 'create-vue-business')
+            const dependencies = allDependencies.filter(
+              (d) => d.packageJson.name !== 'create-vue-business'
+            )
             const licenseText =
               `# create-vue-business core license\n\n` +
               `create-vue-business is released under the MIT license:\n\n` +

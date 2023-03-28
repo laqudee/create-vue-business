@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@vue/create-eslint-config': ^0.2.0
+  create-vue-business: ^0.0.1
   esbuild: ^0.16.14
   esbuild-plugin-license: ^1.2.2
   husky: ^8.0.3

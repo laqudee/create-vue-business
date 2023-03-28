@@ -140,12 +140,7 @@ async function init() {
         },
         {
           name: 'targetH5', // TODO
-          type: (prev, values) => {
-            if (isFeatureFlagsUsed || !values.targetWeb) {
-              return null
-            }
-            return 'toggle'
-          },
+          type: () => (isFeatureFlagsUsed ? null : 'toggle'),
           message: 'Determine H5(Vant) project creation',
           initial: false,
           active: 'Yes',
@@ -245,9 +240,6 @@ async function init() {
     console.log(`  ${bold(green(`cd ../`))}`)
   }
   console.log(`  ${bold(green(getCommand(packageManager, 'install')))}`)
-  if (needsPrettier) {
-    console.log(`  ${bold(green(getCommand(packageManager, 'format')))}`)
-  }
   console.log(`  ${bold(green(getCommand(packageManager, 'dev')))}`)
   console.log()
 }

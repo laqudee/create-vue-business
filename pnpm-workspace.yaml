@@ -1,0 +1,5 @@
+packages:
+  - 'template/base'
+  - 'template/config/**'
+  - 'template/code/**'
+  - 'template/entry/**'

@@ -1,0 +1,21 @@
+{
+  "name": "vue-vant-demo",
+  "version": "0.0.1",
+  "dependencies": {
+    "vant": "^4.0.0",
+    "vue": "^3.2.45",
+    "@vueuse/core": "^9.13.0",
+    "amfe-flexible": "^2.2.1",
+    "axios": "^1.3.4",
+    "dayjs": "^1.11.2",
+    "echarts": "^5.3.2",
+    "js-cookie": "^3.0.1",
+    "pinia": "^2.0.32",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "qs": "^6.10.5",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "jsdom": "^21.1.0"
+  }
+}

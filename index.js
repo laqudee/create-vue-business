@@ -10,7 +10,6 @@ import * as banners from './utils/banners'
 import renderTemplate from './utils/renderTemplate'
 import { postOrderDirectoryTraverse, preOrderDirectoryTraverse } from './utils/directoryTraverse'
 import getCommand from './utils/getCommand'
-import renderEslint from './utils/renderEslint'
 
 function isValidPackageName(projectName) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName)
@@ -70,16 +69,10 @@ async function init() {
   // --eslint-with-prettier (only support prettier through eslint for simplicity)
   // --force (for force overwriting)
   const argv = minimist(process.argv.slice(2), {
-    alias: {
-      router: ['vue-router']
-    },
     string: ['_'],
     // all arguments are treated as booleans
     boolean: true
   })
-
-  // if any of the feature flags is set, we would skip the feature prompts
-  const isFeatureFlagsUsed = typeof (argv.default ?? argv.vitest ?? argv.eslint) === 'boolean'
 
   let targetDir = argv._[0]
   const defaultProjectName = !targetDir ? 'vue-business-project' : targetDir
@@ -93,8 +86,9 @@ async function init() {
     // - Project name:
     //   - whether to overwrite the existing directory or not?
     //   - enter a valid package name for package.json
-    // - Add ESLint for code quality?
-    // - Add Prettier for code formatting?
+    // - Choices Project type
+    //   - Web
+    //   - H5
     result = await prompts(
       [
         {
@@ -131,20 +125,14 @@ async function init() {
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
         },
         {
-          name: 'targetWeb', // TODO
-          type: () => (isFeatureFlagsUsed ? null : 'toggle'),
-          message: 'Determine Web(Element-plus) project creation?',
-          initial: false,
-          active: 'Yes',
-          inactive: 'No'
-        },
-        {
-          name: 'targetH5', // TODO
-          type: () => (isFeatureFlagsUsed ? null : 'toggle'),
-          message: 'Determine H5(Vant) project creation',
-          initial: false,
-          active: 'Yes',
-          inactive: 'No'
+          name: 'targetTag',
+          type: 'select',
+          message: 'Determine Web(Element-plus) or H5(Vant) project creation?',
+          default: 'web',
+          choices: [
+            { title: 'Web(Element-plus)', value: 'web' },
+            { title: 'H5(Vant)', value: 'h5' }
+          ]
         }
       ],
       {
@@ -164,8 +152,7 @@ async function init() {
     projectName,
     packageName = projectName ?? defaultProjectName,
     shouldOverwrite = argv.force,
-    targetWeb = argv.web, // TODO
-    targetH5 = argv.h5 // TODO
+    targetTag = argv.tag
   } = result
 
   const root = path.join(cwd, targetDir)
@@ -194,16 +181,11 @@ async function init() {
   // Render base template
   render('base')
 
-  // target Web
-  if (targetWeb) {
-    // TODO
+  if (targetTag === 'web') {
     render('code/web')
     render('config/web')
     render('entry/web')
-  }
-
-  if (targetH5) {
-    // TODO
+  } else if (targetTag === 'h5') {
     render('code/h5')
     render('config/h5')
     render('entry/h5')
@@ -234,7 +216,7 @@ async function init() {
 
   console.log(`\nDone. Now run:\n`)
   console.log(
-    `  ${bold(green(`Please use pnpm as the package management tool for the workspace project`))}`
+    `  ${bold(green(`Please use pnpm as the package management tool for the business project`))}`
   )
   if (root !== cwd) {
     console.log(`  ${bold(green(`cd ../`))}`)

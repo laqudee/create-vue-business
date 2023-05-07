@@ -1,16 +1,9 @@
-import Cookies from 'js-cookie'
+import { cookieAndStorage } from 'common-toolbox'
 
-const config = {
-  cookieExpires: 15
+export const getToken = () => {
+  return cookieAndStorage.getCookie('token')
 }
 
-const get = Cookies.get
-const set = Cookies.set
-
-export function getToken() {
-  return get('token') || ''
-}
-
-export function setToken(token, expires) {
-  set('token', token, { expires: expires || config.cookieExpires })
+export const setToken = (token) => {
+  return cookieAndStorage.setCookie('token', token)
 }

@@ -1,8 +1,6 @@
 <template>
   <div class="home">This is HomeView</div>
-  <div>
-  
-  </div>
+  <div></div>
 </template>
 
 <style lang="less" scoped>

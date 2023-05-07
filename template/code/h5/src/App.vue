@@ -16,4 +16,3 @@ const active = ref(0)
 </template>
 
 <style></style>
-

@@ -1,13 +1,16 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { domSetting } from 'common-toolbox'
+import { domHandler } from 'common-toolbox'
+import axios from './utils/axios'
 import App from './App.vue'
 import router from './router'
 import './assets/main.css'
 
-domSetting.setFontSize()
+domHandler.setFontSize()
 
 const app = createApp(App)
+
+app.config.globalProperties.$axios = axios
 
 app.use(createPinia())
 app.use(router)

@@ -89,12 +89,12 @@ table {
 html,
 #app {
   height: 100%;
-  background-color: #F6F8FD;
+  background-color: #f6f8fd;
 }
 body {
   height: 100%;
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
   line-height: 1.5;
   color: #495060;
   background-color: #fff;
@@ -143,8 +143,8 @@ textarea,
 keygen,
 select,
 button {
-  font-family: 'Hiragino Sans GB', 'Microsoft Yahei', SimSun, 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
+  font-family: 'Hiragino Sans GB', 'Microsoft Yahei', SimSun, 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
   outline: none;
 }
 input::-webkit-outer-spin-button,

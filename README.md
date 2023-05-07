@@ -22,7 +22,6 @@ create-vue-business
 
 ![演示before](https://github.com/laqudee/create-vue-business/blob/main/media/before-business.png)
 
-
 ![演示after](https://github.com/laqudee/create-vue-business/blob/main/media/after-business.png)
 
 ## 构建

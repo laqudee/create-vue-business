@@ -50,8 +50,8 @@ importers:
         specifier: ^1.3.4
         version: registry.npmmirror.com/axios@1.3.4
       common-toolbox:
-        specifier: ^0.0.9
-        version: 0.0.9
+        specifier: ^0.0.10
+        version: 0.0.10
       dayjs:
         specifier: ^1.11.2
         version: registry.npmmirror.com/dayjs@1.11.7
@@ -99,8 +99,8 @@ importers:
         specifier: ^1.3.4
         version: registry.npmmirror.com/axios@1.3.4
       common-toolbox:
-        specifier: ^0.0.9
-        version: 0.0.9
+        specifier: ^0.0.10
+        version: 0.0.10
       dayjs:
         specifier: ^1.11.2
         version: registry.npmmirror.com/dayjs@1.11.7
@@ -620,8 +620,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /common-toolbox@0.0.9:
-    resolution: {integrity: sha512-6rKDZeVkbbP5giIb5PoTuFH9r7NtPBOJ9mci4D+KDymL8v8u1MvAPnNuChQSAVYD5Gttk2qDduINWT1hK6MSQA==}
+  /common-toolbox@0.0.10:
+    resolution: {integrity: sha512-n6jbtQoIcoaCOncRs8/t4j6JrYFt2Nzhw1C9xH4RDGv6bfj/znC/MIpVJB69J8IlP7Q+AS5dbEKfrRecLTw/xg==}
     dependencies:
       axios: 1.3.4
       dayjs: 1.11.7

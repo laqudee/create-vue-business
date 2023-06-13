@@ -1,4 +1,4 @@
-/*! create-vue-business v0.0.4 | MIT */
+/*! create-vue-business v0.1.1 | MIT */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;

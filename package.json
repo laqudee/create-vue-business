@@ -1,6 +1,6 @@
 {
   "name": "create-vue-business",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An easy way to start a pnpm monorepo packages business project about Vue and create-vue-monorepo",
   "bin": {
     "create-vue-business": "outfile.cjs"
